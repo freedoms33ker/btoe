@@ -14,17 +14,18 @@ h1 {
 /* Table Container */
 .table-container {
   display: grid;
-  grid-template-columns: repeat(18, 60px); /* Adjust based on table layout */
-  grid-template-rows: repeat(12, 60px);   /* Adjust based on table layout */
+  grid-template-columns: repeat(18, 144px); /* Adjust to fit image layout */
+  grid-template-rows: repeat(12, 144px);   /* Adjust to fit image layout */
   gap: 2px;
   margin: 0 auto;
   padding: 20px;
-  background-image: url('images/Behavior-Table-Stock.jpg'); /* Reference to your table image */
-  background-size: contain;
+  background-image: url('images/Behavior-Table-Stock.jpg'); /* Ensure the path is correct */
+  background-size: contain; /* Ensure the image fits without distortion */
   background-repeat: no-repeat;
   background-position: center;
-  width: 2588px; /* Ensure this matches your table image dimensions */
-  height: 1767px; /* Ensure this matches your table image dimensions */
+  width: 100%; /* Responsive scaling */
+  max-width: 2588px; /* Match image width */
+  aspect-ratio: 2588 / 1767; /* Maintain aspect ratio */
 }
 
 /* Table Elements */
