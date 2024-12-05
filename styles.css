@@ -26,7 +26,10 @@ h1 {
   width: 100%; /* Responsive scaling */
   max-width: 2588px; /* Match image width */
   aspect-ratio: 2588 / 1767; /* Maintain aspect ratio */
+  overflow: auto; /* Enable scrolling when content overflows */
+  background-color: #f5f5f5; /* Fallback color */
 }
+
 
 /* Table Elements */
 .element {
