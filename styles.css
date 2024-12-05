@@ -1,4 +1,4 @@
-/* General styling */
+/* General Styling */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -11,23 +11,23 @@ h1 {
   margin: 20px 0;
 }
 
-/* Table container */
+/* Table Container */
 .table-container {
   display: grid;
-  grid-template-columns: repeat(18, 60px); /* Adjust for width */
-  grid-template-rows: repeat(12, 60px);   /* Adjust for height */
+  grid-template-columns: repeat(18, 60px); /* Adjust based on table layout */
+  grid-template-rows: repeat(12, 60px);   /* Adjust based on table layout */
   gap: 2px;
   margin: 0 auto;
   padding: 20px;
-  background-image: url('images/behavior-table.jpg'); /* Add your table image */
+  background-image: url('images/Behavior-Table-Stock.jpg'); /* Reference to your table image */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  width: 1080px;
-  height: 720px;
+  width: 1080px; /* Ensure this matches your table image dimensions */
+  height: 720px; /* Ensure this matches your table image dimensions */
 }
 
-/* Table elements */
+/* Table Elements */
 .element {
   display: flex;
   flex-direction: column;
@@ -36,41 +36,63 @@ h1 {
   border: 1px solid transparent;
   border-radius: 4px;
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0); /* Transparent by default */
   transition: transform 0.2s, background-color 0.2s;
 }
 
 .element:hover {
   transform: scale(1.05);
-  background-color: rgba(255, 235, 59, 0.5);
+  background-color: rgba(255, 235, 59, 0.5); /* Light yellow highlight on hover */
 }
 
-/* Selected element */
+/* Selected Elements */
 .element.selected {
-  background-color: rgba(255, 235, 59, 0.7);
-  border: 1px solid #fbc02d;
+  background-color: rgba(255, 235, 59, 0.7); /* Slightly darker yellow for selected */
+  border: 1px solid #fbc02d; /* Yellow border for selected */
 }
 
-/* Color-coded classes */
+/* Color-Coded Classes */
 .green-element {
-  background-color: rgba(76, 175, 80, 0.5);
+  background-color: rgba(76, 175, 80, 0.5); /* Light green */
 }
 
 .red-element {
-  background-color: rgba(244, 67, 54, 0.5);
+  background-color: rgba(244, 67, 54, 0.5); /* Light red */
 }
 
 .yellow-element {
-  background-color: rgba(255, 235, 59, 0.5);
+  background-color: rgba(255, 235, 59, 0.5); /* Light yellow */
 }
 
+.grey-element {
+  background-color: rgba(158, 158, 158, 0.5); /* Light grey */
+}
+
+.lightblue-element {
+  background-color: rgba(66, 165, 245, 0.5); /* Light blue */
+}
+
+.lightpurple-element {
+  background-color: rgba(156, 39, 176, 0.5); /* Light purple */
+}
+
+/* Score Section */
 .count-section {
   margin: 20px 0;
+  font-size: 18px;
+  font-weight: bold;
 }
 
+/* Log Section */
 .log-section {
   margin: 20px 0;
   padding: 10px;
+  text-align: left;
+  max-width: 80%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
 
 button {
@@ -85,4 +107,3 @@ button {
 button:hover {
   background-color: #ddd;
 }
-
