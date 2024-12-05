@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   let totalScore = 0; // Initialize total score
-  const scoreDisplay = document.getElementById("clickCount"); // Score display
+  const scoreDisplay = document.getElementById("clickCount"); // Display for current score
   const logSection = document.getElementById("log"); // Log container
 
   // Function to update the displayed score
@@ -13,24 +13,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const logEntry = document.createElement("div");
     logEntry.textContent = `${action}: ${elementName} (Value: ${value})`;
     logSection.appendChild(logEntry);
+    logSection.scrollTop = logSection.scrollHeight; // Auto-scroll to the latest log
   }
 
   // Add event listeners to all table elements
   document.querySelectorAll(".element").forEach((element) => {
     element.addEventListener("click", () => {
-      const value = parseFloat(element.dataset.value);
-      const elementName = element.querySelector(".name").textContent;
+      const value = parseFloat(element.dataset.value); // Retrieve element's value
+      const elementName = element.querySelector(".name").textContent; // Retrieve element's name
 
       // Toggle selection
       if (element.classList.toggle("selected")) {
-        totalScore += value;
-        logAction("Added", elementName, value);
+        totalScore += value; // Add value to total score
+        logAction("Added", elementName, value); // Log the addition
       } else {
-        totalScore -= value;
-        logAction("Removed", elementName, value);
+        totalScore -= value; // Subtract value from total score
+        logAction("Removed", elementName, value); // Log the removal
       }
 
-      updateScore();
+      updateScore(); // Update the displayed score
     });
   });
 
@@ -38,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("new-section-btn").addEventListener("click", () => {
     const separator = document.createElement("hr");
     logSection.appendChild(separator);
+    logAction("New Section", "---", "0");
   });
 
   // Copy log to clipboard
@@ -53,4 +55,3 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize the score display
   updateScore();
 });
-
