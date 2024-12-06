@@ -1,27 +1,25 @@
-// script.js
+document.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('.element');
+    const logList = document.getElementById('log');
+    const newLogButton = document.getElementById('new-log');
 
-// Function to mark elements with "X" and log their details
-function markElement(element) {
-    // Toggle "marked" class
-    element.classList.toggle("marked");
+    // Click handler for elements
+    elements.forEach((element) => {
+        element.addEventListener('click', () => {
+            const code = element.dataset.code;
+            const value = element.dataset.value;
 
-    // Get element details
-    const code = element.getAttribute("data-code");
-    const value = element.getAttribute("data-value");
-    const name = element.querySelector(".name").innerText;
+            // Mark the element with an X
+            if (!element.classList.contains('marked')) {
+                element.classList.add('marked');
+                logList.innerHTML += `<li>Marked ${code} (Value: ${value})</li>`;
+            }
+        });
+    });
 
-    // Update log
-    const log = document.getElementById("log");
-    const existingLog = Array.from(log.children).find(li => li.dataset.code === code);
-
-    if (existingLog) {
-        // Remove log entry if unmarked
-        existingLog.remove();
-    } else {
-        // Add log entry
-        const logEntry = document.createElement("li");
-        logEntry.dataset.code = code;
-        logEntry.innerText = `${name} (Code: ${code}, Value: ${value}) marked.`;
-        log.appendChild(logEntry);
-    }
-}
+    // New Log Button: Reset all elements
+    newLogButton.addEventListener('click', () => {
+        elements.forEach((element) => element.classList.remove('marked'));
+        logList.innerHTML = '';
+    });
+});
