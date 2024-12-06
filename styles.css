@@ -1,4 +1,4 @@
-/* General Styling */
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -14,88 +14,90 @@ h1 {
 /* Table Container */
 .table-container {
     display: grid;
-    grid-template-columns: repeat(18, 80px); /* Adjust number of columns and column width */
-    grid-template-rows: repeat(10, 80px);   /* Adjust number of rows and row height */
-    gap: 2px;
-    width: auto; /* Allow the table to grow based on content */
-    margin: 20px auto;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    padding: 10px;
-    justify-content: center; /* Center the grid */
-    align-content: center;   /* Center the grid vertically */
+    grid-template-areas: 
+        "Acc Acc Acc Acc Acc Acc Acc Acc"
+        "Ht Ht Ht Ht Ht Ht Ht Ht"
+        "Ct Ct Ct Ct Ct Ct Ct Ct"
+        "Ga Ga Ga Ga Ga Ga Ga Ga"
+        "Ef Ef Ef Ef Ef Ef Ef Ef"
+        "Hd Hd Hd Hd Hd Hd Hd Hd"
+        "Lc Lc Lc Lc Lc Lc Lc Lc"
+        "Ts Ts Ts Ts Ts Ts Ts Ts"
+        "Tu Tu Tu Tu Tu Tu Tu Tu"
+        "Om Om Om Om Om Om Om Om"
+        "Jc Jc Jc Jc Jc Jc Jc Jc"
+        "Wd Wd Wd Wd Wd Wd Wd Wd"
+        "Cg Cg Cg Cg Cg Cg Cg Cg"
+        "Yn Yn Yn Yn Yn Yn Yn Yn"
+        "Ha Ha Ha Ha Ha Ha Ha Ha"
+        "Fl Fl Fl Fl Fl Fl Fl Fl"
+        "Hb Hb Hb Hb Hb Hb Hb Hb"
+        "Lr Lr Lr Lr Lr Lr Lr Lr"
+        "Ot Ot Ot Ot Ot Ot Ot Ot"
+        "Bn Bn Bn Bn Bn Bn Bn Bn"
+        "Vh Vh Vh Vh Vh Vh Vh Vh"
+        "Aa Aa Aa Aa Aa Aa Aa Aa"
+        "Gg Gg Gg Gg Gg Gg Gg Gg"
+        "Bg Bg Bg Bg Bg Bg Bg Bg"
+        "Ye Ye Ye Ye Ye Ye Ye Ye"
+        "Hs Hs Hs Hs Hs Hs Hs Hs";
+    gap: 10px; /* Spacing between elements */
+    padding: 20px;
+    width: 100%; /* Full width of the container */
+    justify-content: center;
+    align-content: center;
+    background-color: #ffffff;
+    border: 2px solid #ccc;
 }
 
-/* Elements */
+/* Element Styles */
 .element {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    border: 1px solid #ccc;
-    background-color: rgba(255, 255, 255, 0.8); /* Light background */
-    transition: transform 0.2s ease, background-color 0.2s ease;
-    cursor: pointer;
+    border: 2px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.8);
     font-size: 14px;
-    padding: 5px;
     border-radius: 4px;
-    width: 100%;  /* Ensure elements fill grid cells */
-    height: 100%; /* Ensure elements fill grid cells */
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    height: 100px; /* Ensures elements are visible */
 }
 
 .element:hover {
     transform: scale(1.05);
-    background-color: rgba(255, 235, 59, 0.5); /* Highlight on hover */
+    background-color: rgba(255, 235, 59, 0.5);
 }
 
 .element.green-element {
-    background-color: rgba(76, 175, 80, 0.5); /* Light green */
+    background-color: rgba(76, 175, 80, 0.7);
 }
 
 .element.red-element {
-    background-color: rgba(244, 67, 54, 0.5); /* Light red */
+    background-color: rgba(244, 67, 54, 0.7);
 }
 
-.element.yellow-element {
-    background-color: rgba(255, 235, 59, 0.5); /* Light yellow */
-}
-
-.element.grey-element {
-    background-color: rgba(158, 158, 158, 0.5); /* Light grey */
-}
-
-.element.lightblue-element {
-    background-color: rgba(66, 165, 245, 0.5); /* Light blue */
-}
-
-.element.lightpurple-element {
-    background-color: rgba(156, 39, 176, 0.5); /* Light purple */
-}
-
-/* Marked Elements */
-.marked {
+.element.marked {
     position: relative;
 }
 
-.marked::after {
+.element.marked::after {
     content: 'X';
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: red;
     font-size: 24px;
+    color: red;
     font-weight: bold;
 }
 
 /* Log Section */
 .log-section {
-    margin: 20px 0;
+    margin: 20px auto;
     padding: 10px;
-    text-align: left;
-    max-width: 80%;
-    margin: 0 auto;
+    max-width: 90%;
     background-color: #ffffff;
     border: 1px solid #ddd;
     border-radius: 4px;
