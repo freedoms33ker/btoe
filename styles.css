@@ -14,62 +14,71 @@ h1 {
 /* Table Container */
 .table-container {
   display: grid;
-  grid-template-columns: repeat(18, 60px); /* Adjust based on layout */
-  grid-template-rows: repeat(12, 60px);
+  grid-template-columns: repeat(18, 60px); /* 18 columns */
+  grid-template-rows: repeat(12, 60px);   /* 12 rows */
   gap: 2px;
   margin: 0 auto;
   padding: 20px;
-  background-image: url('images/Behavior-Table-Stock.jpg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 100%;
-  aspect-ratio: 2588 / 1767;
+  width: auto;
+  height: auto;
+  background-color: white;
 }
 
-/* Element Styling */
-.element {
+/* Table Elements */
+.element, .empty-cell {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border: 1px solid transparent;
+  border-radius: 4px;
   cursor: pointer;
+  background-color: rgba(255, 255, 255, 0); /* Transparent by default */
   transition: transform 0.2s, background-color 0.2s;
 }
 
 .element:hover {
   transform: scale(1.05);
+  background-color: rgba(255, 235, 59, 0.5); /* Highlight on hover */
 }
 
 .element.selected {
-  background-color: rgba(255, 235, 59, 0.7);
+  background-color: rgba(255, 235, 59, 0.7); /* Slightly darker yellow */
   border: 1px solid #fbc02d;
 }
 
-/* Count Section */
-.count-section {
-  margin: 20px 0;
+/* Color-Coded Classes */
+.green-element {
+  background-color: rgba(76, 175, 80, 0.5);
+}
+.red-element {
+  background-color: rgba(244, 67, 54, 0.5);
+}
+.yellow-element {
+  background-color: rgba(255, 235, 59, 0.5);
+}
+.grey-element {
+  background-color: rgba(158, 158, 158, 0.5);
+}
+.lightblue-element {
+  background-color: rgba(66, 165, 245, 0.5);
+}
+.lightpurple-element {
+  background-color: rgba(156, 39, 176, 0.5);
 }
 
-/* Log Section */
-.log-section {
-  margin: 20px auto;
-  max-width: 80%;
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 10px;
+/* Red X Overlay for certain elements */
+.red-x {
+  position: relative;
 }
-
-button {
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #ddd;
+.red-x::after {
+  content: 'X';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+  pointer-events: none;
 }
