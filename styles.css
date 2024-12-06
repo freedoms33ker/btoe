@@ -14,16 +14,16 @@ h1 {
 /* Table Container */
 .table-container {
     display: grid;
-    grid-template-columns: repeat(18, 1fr); /* Adjust to match your table layout */
-    grid-template-rows: repeat(10, auto); /* Adjust rows to fit */
+    grid-template-columns: repeat(18, 80px); /* Adjust number of columns and column width */
+    grid-template-rows: repeat(10, 80px);   /* Adjust number of rows and row height */
     gap: 2px;
-    width: 100%; /* Full width */
-    max-width: 1200px; /* Limit table width */
+    width: auto; /* Allow the table to grow based on content */
     margin: 20px auto;
-    overflow-x: auto; /* Allow scrolling on smaller screens */
     border: 1px solid #ccc;
     background-color: #fff;
     padding: 10px;
+    justify-content: center; /* Center the grid */
+    align-content: center;   /* Center the grid vertically */
 }
 
 /* Elements */
@@ -40,6 +40,8 @@ h1 {
     font-size: 14px;
     padding: 5px;
     border-radius: 4px;
+    width: 100%;  /* Ensure elements fill grid cells */
+    height: 100%; /* Ensure elements fill grid cells */
 }
 
 .element:hover {
