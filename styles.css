@@ -1,84 +1,110 @@
 /* General Styling */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f5f5f5;
-  text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    text-align: center;
 }
 
 h1 {
-  margin: 20px 0;
+    margin: 20px 0;
 }
 
 /* Table Container */
 .table-container {
-  display: grid;
-  grid-template-columns: repeat(18, 60px); /* 18 columns */
-  grid-template-rows: repeat(12, 60px);   /* 12 rows */
-  gap: 2px;
-  margin: 0 auto;
-  padding: 20px;
-  width: auto;
-  height: auto;
-  background-color: white;
+    display: grid;
+    grid-template-columns: repeat(18, 1fr); /* Adjust to match your table layout */
+    grid-template-rows: repeat(10, auto); /* Adjust rows to fit */
+    gap: 2px;
+    width: 100%; /* Full width */
+    max-width: 1200px; /* Limit table width */
+    margin: 20px auto;
+    overflow-x: auto; /* Allow scrolling on smaller screens */
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 10px;
 }
 
-/* Table Elements */
-.element, .empty-cell {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0); /* Transparent by default */
-  transition: transform 0.2s, background-color 0.2s;
+/* Elements */
+.element {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.8); /* Light background */
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 4px;
 }
 
 .element:hover {
-  transform: scale(1.05);
-  background-color: rgba(255, 235, 59, 0.5); /* Highlight on hover */
+    transform: scale(1.05);
+    background-color: rgba(255, 235, 59, 0.5); /* Highlight on hover */
 }
 
-.element.selected {
-  background-color: rgba(255, 235, 59, 0.7); /* Slightly darker yellow */
-  border: 1px solid #fbc02d;
+.element.green-element {
+    background-color: rgba(76, 175, 80, 0.5); /* Light green */
 }
 
-/* Color-Coded Classes */
-.green-element {
-  background-color: rgba(76, 175, 80, 0.5);
-}
-.red-element {
-  background-color: rgba(244, 67, 54, 0.5);
-}
-.yellow-element {
-  background-color: rgba(255, 235, 59, 0.5);
-}
-.grey-element {
-  background-color: rgba(158, 158, 158, 0.5);
-}
-.lightblue-element {
-  background-color: rgba(66, 165, 245, 0.5);
-}
-.lightpurple-element {
-  background-color: rgba(156, 39, 176, 0.5);
+.element.red-element {
+    background-color: rgba(244, 67, 54, 0.5); /* Light red */
 }
 
-/* Red X Overlay for certain elements */
-.red-x {
-  position: relative;
+.element.yellow-element {
+    background-color: rgba(255, 235, 59, 0.5); /* Light yellow */
 }
-.red-x::after {
-  content: 'X';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: red;
-  font-weight: bold;
-  font-size: 20px;
-  pointer-events: none;
+
+.element.grey-element {
+    background-color: rgba(158, 158, 158, 0.5); /* Light grey */
+}
+
+.element.lightblue-element {
+    background-color: rgba(66, 165, 245, 0.5); /* Light blue */
+}
+
+.element.lightpurple-element {
+    background-color: rgba(156, 39, 176, 0.5); /* Light purple */
+}
+
+/* Marked Elements */
+.marked {
+    position: relative;
+}
+
+.marked::after {
+    content: 'X';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: red;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Log Section */
+.log-section {
+    margin: 20px 0;
+    padding: 10px;
+    text-align: left;
+    max-width: 80%;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.log-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.log-section li {
+    font-size: 14px;
+    margin: 5px 0;
 }
