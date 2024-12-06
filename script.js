@@ -1,45 +1,27 @@
-document.addEventListener("DOMContentLoaded", () => {
-  let totalScore = 0;
-  const scoreDisplay = document.getElementById("clickCount");
-  const logSection = document.getElementById("log");
+// script.js
 
-  function updateScore() {
-    scoreDisplay.textContent = totalScore.toFixed(2);
-  }
+// Function to mark elements with "X" and log their details
+function markElement(element) {
+    // Toggle "marked" class
+    element.classList.toggle("marked");
 
-  function logAction(action, elementName, value) {
-    const logEntry = document.createElement("div");
-    logEntry.textContent = `${action}: ${elementName} (Value: ${value})`;
-    logSection.appendChild(logEntry);
-  }
+    // Get element details
+    const code = element.getAttribute("data-code");
+    const value = element.getAttribute("data-value");
+    const name = element.querySelector(".name").innerText;
 
-  document.querySelectorAll(".element").forEach((element) => {
-    element.addEventListener("click", () => {
-      const value = parseFloat(element.dataset.value);
-      const elementName = element.querySelector(".name").textContent;
+    // Update log
+    const log = document.getElementById("log");
+    const existingLog = Array.from(log.children).find(li => li.dataset.code === code);
 
-      if (element.classList.toggle("selected")) {
-        totalScore += value;
-        logAction("Added", elementName, value);
-      } else {
-        totalScore -= value;
-        logAction("Removed", elementName, value);
-      }
-      updateScore();
-    });
-  });
-
-  document.getElementById("new-section-btn").addEventListener("click", () => {
-    const separator = document.createElement("hr");
-    logSection.appendChild(separator);
-  });
-
-  document.getElementById("copy-btn").addEventListener("click", () => {
-    const logText = Array.from(logSection.children)
-      .map((child) => child.textContent)
-      .join("\n");
-    navigator.clipboard.writeText(logText).then(() => alert("Log copied!"));
-  });
-
-  updateScore();
-});
+    if (existingLog) {
+        // Remove log entry if unmarked
+        existingLog.remove();
+    } else {
+        // Add log entry
+        const logEntry = document.createElement("li");
+        logEntry.dataset.code = code;
+        logEntry.innerText = `${name} (Code: ${code}, Value: ${value}) marked.`;
+        log.appendChild(logEntry);
+    }
+}
