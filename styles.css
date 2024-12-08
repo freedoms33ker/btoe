@@ -15,32 +15,15 @@ h1 {
 .table-container {
     display: grid;
     grid-template-areas: 
-        "Acc Acc Acc Acc Acc Acc Acc Acc"
-        "Ht Ht Ht Ht Ht Ht Ht Ht"
-        "Ct Ct Ct Ct Ct Ct Ct Ct"
-        "Ga Ga Ga Ga Ga Ga Ga Ga"
-        "Ef Ef Ef Ef Ef Ef Ef Ef"
-        "Hd Hd Hd Hd Hd Hd Hd Hd"
-        "Lc Lc Lc Lc Lc Lc Lc Lc"
-        "Ts Ts Ts Ts Ts Ts Ts Ts"
-        "Tu Tu Tu Tu Tu Tu Tu Tu"
-        "Om Om Om Om Om Om Om Om"
-        "Jc Jc Jc Jc Jc Jc Jc Jc"
-        "Wd Wd Wd Wd Wd Wd Wd Wd"
-        "Cg Cg Cg Cg Cg Cg Cg Cg"
-        "Yn Yn Yn Yn Yn Yn Yn Yn"
-        "Ha Ha Ha Ha Ha Ha Ha Ha"
-        "Fl Fl Fl Fl Fl Fl Fl Fl"
-        "Hb Hb Hb Hb Hb Hb Hb Hb"
-        "Lr Lr Lr Lr Lr Lr Lr Lr"
-        "Ot Ot Ot Ot Ot Ot Ot Ot"
-        "Bn Bn Bn Bn Bn Bn Bn Bn"
-        "Vh Vh Vh Vh Vh Vh Vh Vh"
-        "Aa Aa Aa Aa Aa Aa Aa Aa"
-        "Gg Gg Gg Gg Gg Gg Gg Gg"
-        "Bg Bg Bg Bg Bg Bg Bg Bg"
-        "Ye Ye Ye Ye Ye Ye Ye Ye"
-        "Hs Hs Hs Hs Hs Hs Hs Hs";
+        "Ht . .    .     .   .  .   .  .   .   .   .   .  .   .    Ga   Ct"
+        "Ef Hd .   .   Acc   .  .   .  .   .   .   Lc  Ts Tu  Om   Wd   Cg"
+        "Yn Ha .   .     .   .  .   .  .   .   .   Fl  Hb Lr  Ot   Vh   Aa"
+        "Gg Bg Ye  Hs   Sp  Br  Pd  Sq Sh  Sa  Dg  Fr  Co Ag  Pr   Ec   Ss"
+        "De Pe Cs  Pc   Eo  Ps  No  Lf St  Bh  Ah  Shg Bb Cr  Wp   Ft   Ttc"
+        "Ia L4 Tlt Ff   Po Tch  Dc  Tp Fi  Grs Bon Lp  Wf Bar BarC Gpr  Hu"
+        "Ge Lg Agg Bre  Fc  Pt  Kh  Df Bi  La  Gm Thc Wt Ip   Er   Fw   Fns"
+        ".   .  .  Opi  Oi  Sr  Bc  Wc Jb  Cc  Ob  Ca  Gs Bs  Ftb  Jp   Cl"
+        ".   .  .  Hes Psd Rip  Spd NA Prn Res Nc  Qr  Am Pol Oa   Exc  Chr";
     gap: 10px; /* Spacing between elements */
     padding: 20px;
     width: 100%; /* Full width of the container */
@@ -53,6 +36,8 @@ h1 {
 /* Element Styles */
 .element {
     display: flex;
+    flex-direction: column;
+    padding: 10px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -62,7 +47,6 @@ h1 {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.2s, transform 0.2s;
-    height: 100px; /* Ensures elements are visible */
 }
 
 .element:hover {
@@ -111,4 +95,10 @@ h1 {
 .log-section li {
     font-size: 14px;
     margin: 5px 0;
+}
+
+.symbol {
+}
+
+.name {
 }
