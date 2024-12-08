@@ -15,15 +15,15 @@ h1 {
 .table-container {
     display: grid;
     grid-template-areas: 
-        "Ht . .    .     .   .  .   .  .   .   .   .   .  .   .    Ga   Ct"
-        "Ef Hd .   .   Acc   .  .   .  .   .   .   Lc  Ts Tu  Om   Wd   Cg"
-        "Yn Ha .   .     .   .  .   .  .   .   .   Fl  Hb Lr  Ot   Vh   Aa"
-        "Gg Bg Ye  Hs   Sp  Br  Pd  Sq Sh  Sa  Dg  Fr  Co Ag  Pr   Ec   Ss"
-        "De Pe Cs  Pc   Eo  Ps  No  Lf St  Bh  Ah  Shg Bb Cr  Wp   Ft   Ttc"
-        "Ia L4 Tlt Ff   Po Tch  Dc  Tp Fi  Grs Bon Lp  Wf Bar BarC Gpr  Hu"
-        "Ge Lg Agg Bre  Fc  Pt  Kh  Df Bi  La  Gm Thc Wt Ip   Er   Fw   Fns"
-        ".   .  .  Opi  Oi  Sr  Bc  Wc Jb  Cc  Ob  Ca  Gs Bs  Ftb  Jp   Cl"
-        ".   .  .  Hes Psd Rip  Spd NA Prn Res Nc  Qr  Am Pol Oa   Exc  Chr";
+        "Ht . .    .     .   .  .   .  .   .   .   .   .  .   .     .   Ga   Ct"
+        "Ef Hd .   .   Acc   .  .   .  .   .   .   Lc  Ts Tu  Om   Jc   Wd   Cg"
+        "Yn Ha .   .     .   .  .   .  .   .   .   Fl  Hb Lr  Ot   Bn   Vh   Aa"
+        "Gg Bg Ye  Hs   Sp  Br  Pd  Sq Sh  Sa  Dg  Fr  Co Ag  Pr   Sw   Ec   Ss"
+        "De Pe Cs  Pc   Eo  Ps  No  Lf St  Bh  Ah  Shg Bb Cr  Wp   Fz   Ft   Ttc"
+        "Ia L4 Tlt Ff   Po Tch  Dc  Tp Fi  Grs Bon Lp  Wf Bar BarC Pdn Gpr   Hu"
+        "Ge Lg Agg Bre  Fc  Pt  Kh  Df Bi  La  Gm Thc Wt Ip   Er   Kc   Fw   Fns"
+        ".   .  .  Opi  Oi  Sr  Bc  Wc Jb  Cc  Ob  Ca  Gs Bs  Ftb  Oc   Jp   Cl"
+        ".   .  .  Hes Psd Rip  Spd NA Prn Res Nc  Qr  Am Pol Oa   Mc   Exc  Chr";
     gap: 10px; /* Spacing between elements */
     padding: 20px;
     width: 100%; /* Full width of the container */
@@ -56,6 +56,22 @@ h1 {
 
 .element.green-element {
     background-color: rgba(76, 175, 80, 0.7);
+}
+
+.element.grey-element {
+    background-color: #DDDDDD;
+}
+
+.element.lightblue-element {
+    background-color: #ADD8E6;
+}
+
+.element.lightyellow-element {
+    background-color: #FFFFC5;
+}
+
+.element.brightyellow-element {
+    background-color: #FFED29;
 }
 
 .element.red-element {
