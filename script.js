@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!element.classList.contains('marked')) {
                 element.classList.add('marked');
                 logList.innerHTML += `<li>Marked ${code} (Value: ${value})</li>`;
-                const currentBTOEScore = parseInt(btoeScoreContainer.innerHTML, 10);
-                const currentValue = parseInt(value, 10);
+                const currentBTOEScore = parseFloat(btoeScoreContainer.innerHTML);
+                const currentValue = parseFloat(value, 10);
                 btoeScoreContainer.innerHTML = (currentBTOEScore + currentValue).toString();
 
             }
