@@ -7,10 +7,6 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="behavior-grid" class="behavior-grid">
-    <!-- Dynamic elements will populate here -->
-  </div>
-  <button id="reset-button">Reset</button>
   <script src="script.js"></script>
 </body>
 </html>
@@ -127,7 +123,7 @@
         <div class="symbol">Gm</div>
         <div class="name">Grooming</div>
     </div>
-    <div class="grey-element" style="grid-area: Nc;" data-code="Nc" data-value="4.0">
+    <div class="element grey-element" style="grid-area: Nc;" data-code="Nc" data-value="4.0">
         <div class="symbol">Nc</div>
         <div class="name">Non Contracting Statements</div>
     </div>
@@ -514,14 +510,13 @@
   </div>
   <!-- Score Section -->
   <div class="count-section">
-    <h3>Current Count: <span id="clickCount">0</span></h3>
+    <h3>BTOE Score: <span id="btoe-score">0</span></h3>
   </div>
   <!-- Log Section -->
   <div class="log-section">
     <h2>Log</h2>
     <div id="log"></div>
-    <button id="new-section-btn">New Section</button>
-    <button id="copy-btn">Copy Log to Clipboard</button>
+    <button id="reset-button">Reset</button>
   </div>
   <!-- Script Reference -->
   <script src="script.js"></script>

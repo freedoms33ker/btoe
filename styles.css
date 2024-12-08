@@ -114,7 +114,15 @@ h1 {
 }
 
 .symbol {
+    font-weight: bold;
 }
 
 .name {
+}
+
+#reset-button {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
 }

@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     const elements = document.querySelectorAll('.element');
     const logList = document.getElementById('log');
-    const newLogButton = document.getElementById('new-log');
+    const resetButton = document.getElementById('reset-button');
+    const btoeScoreContainer = document.getElementById('btoe-score');
+    const copyButton = document.getElementById("copy-btn");
+
 
     // Click handler for elements
     elements.forEach((element) => {
@@ -13,13 +16,19 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!element.classList.contains('marked')) {
                 element.classList.add('marked');
                 logList.innerHTML += `<li>Marked ${code} (Value: ${value})</li>`;
+                const currentBTOEScore = parseInt(btoeScoreContainer.innerHTML, 10);
+                const currentValue = parseInt(value, 10);
+                btoeScoreContainer.innerHTML = (currentBTOEScore + currentValue).toString();
+
             }
         });
     });
 
     // New Log Button: Reset all elements
-    newLogButton.addEventListener('click', () => {
+    resetButton.addEventListener('click', () => {
         elements.forEach((element) => element.classList.remove('marked'));
         logList.innerHTML = '';
+        btoeScoreContainer.innerHTML = "0";
     });
+
 });
