@@ -17,9 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 element.classList.add('marked');
                 logList.innerHTML += `<li>Marked ${code} (Value: ${value})</li>`;
                 const currentBTOEScore = parseFloat(btoeScoreContainer.innerHTML);
-                const currentValue = parseFloat(value, 10);
+                const currentValue = parseFloat(value);
                 btoeScoreContainer.innerHTML = (currentBTOEScore + currentValue).toString();
-
+            } else {
+                element.classList.remove('marked');
+                logList.innerHTML += `<li>REMOVE Marked ${code} (Value: ${value})</li>`;
+                const currentBTOEScore = parseFloat(btoeScoreContainer.innerHTML);
+                const currentValue = parseFloat(value);
+                btoeScoreContainer.innerHTML = (currentBTOEScore - currentValue).toString();
             }
         });
     });

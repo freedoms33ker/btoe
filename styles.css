@@ -67,6 +67,10 @@ h1 {
     background-color: #FFED29;
 }
 
+.element.purple-element {
+    background-color: #D6B4FC;
+}
+
 .element.red-element {
     background-color: rgba(244, 67, 54, 0.7);
 }
